@@ -1,166 +1,170 @@
-# Portfolio Website
+# Kamel Ahmed - AI Engineer
 
-A modern, responsive portfolio website with bilingual support (English/Arabic), dark mode, and interactive features.
+<div align="center">
 
-## Features
+**Building production-grade AI systems, not just demos.**
+
+[![Website](https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://kamelahmed.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kamel-ahmed-1308/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KamelAhmed813)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kamel_ahmed395@gmail.com)
+
+</div>
+
+---
+
+## 👋 Who I Am
+
+I'm **Kamel Ahmed**, an AI Engineer at [Link Datacenter (LDC)](https://www.linkdatacenter.net) with a passion for building production-ready AI systems that make a real impact. I specialize in creating reliable, observable, and scalable AI solutions that work in real-world environments—not just in Jupyter notebooks.
+
+With a Bachelor's degree in Computer Science from Helwan University (graduated July 2023), I've transitioned from test automation and backend development to focusing on production-grade RAG systems, LLM infrastructure, and agentic workflows.
+
+**Location:** Egypt  
+**Status:** Active / Open to discussing new opportunities
+
+---
+
+## 🚀 What I Build
+
+I design and deploy **production-grade AI systems** that power real-world applications:
+
+### 🤖 AI & ML Systems
+- **RAG & Graph-RAG Architectures**: Building scalable retrieval-augmented generation systems
+- **LLM Infrastructure**: Deploying and optimizing infrastructure on GPU clusters for efficient model serving
+- **Agentic Workflows**: Developing multi-agent systems for complex task orchestration
+
+### 🔧 Backend & Infrastructure
+- **AI APIs**: Building RESTful APIs for AI services with authentication, rate limiting, and observability
+- **SaaS Platforms**: Creating controlled, usage-limited AI platforms with full lifecycle management
+- **MLOps**: Setting up deployment pipelines for open-source LLMs on on-prem GPU servers and cloud environments
+- **System Design**: Designing scalable architectures
+
+### 🧪 Automation & Testing
+- **Test Automation Frameworks**: Building scalable automation frameworks using Java, Selenium, and Cucumber
+- **CI/CD Integration**: Integrating automation into deployment pipelines to improve reliability and speed
+
+---
+
+## 🛠️ Tech Stack
+
+### AI/ML
+- **RAG & Graph-RAG**: Neo4j, LangChain, semantic search, knowledge graphs
+- **LLM Infrastructure**: vLLM, model serving, GPU optimization, MLOps
+- **Agentic Systems**: LangGraph, MCP (Model Context Protocol), multi-agent orchestration
+- **AI Services**: Google Gemini API, custom AI personas, intelligent document processing
+
+### Backend Development
+- **Languages**: Python, Java, C# / .NET
+- **Frameworks**: FastAPI, Flask, Spring Boot
+- **APIs**: RESTful design, authentication, rate limiting, observability
+
+### Databases
+- **Graph**: Neo4j (for knowledge graphs and Graph-RAG)
+- **Relational**: PostgreSQL, Oracle, MySQL
+- **Database Design**: Schema optimization, query performance
+
+### DevOps & Infrastructure
+- **Containerization**: Docker
+- **CI/CD**: GitHub Actions, automated pipelines (Azure pipeline)
+- **Cloud Platforms**: GCP, Azure
+
+### Testing & Quality
+- **Test Automation**: Selenium, Cucumber, JUnit
+- **Framework Design**: Reusable test suites, CI/CD integration
+- **Quality Assurance**: Manual and automated testing strategies
+
+---
+
+## 📊 Key Projects
+
+### Production RAG System
+Built a scalable RAG system using Neo4j for knowledge graph storage, enabling semantic search and retrieval across large document corpora. Achieved **99.9% uptime** with **<200ms latency**.
+
+**Tech Stack:** Neo4j, Python, LangChain, vLLM
+
+### LLM Infrastructure Platform
+Designed and deployed vLLM-based infrastructure for serving multiple LLM models on GPU clusters with efficient resource management. Achieved **10x throughput improvement**.
+
+**Tech Stack:** vLLM, Python, Docker, Kubernetes
+
+### Agentic Workflow System
+Developed multi-agent systems using LangGraph and MCP for complex task orchestration and decision-making workflows. Created **50+ workflow templates**.
+
+**Tech Stack:** LangGraph, MCP, Python, FastAPI
+
+### Housing Data Mining
+Developed a data mining system for housing data analysis using Python and pandas, processing **100+ data points**.
+
+**Tech Stack:** Python, pandas, numpy, matplotlib  
+**GitHub:** [View Project](https://github.com/KamelAhmed813/DataMining)
+
+---
+
+## 💼 Professional Experience
+
+### AI Engineer @ Link Datacenter (LDC)
+**Feb 2025 – Present**
+
+- Designing and deploying production-grade RAG and Graph-RAG systems using Neo4j
+- Building LLM infrastructure using vLLM on GPU clusters
+- Developing AI APIs and agentic workflows using LangGraph and MCP
+- Working across backend, AI logic, infrastructure, and MLOps
+- Building SaaS-style AI platform with controlled usage limits
+- Implementing semantic chunking algorithms for improved retrieval quality
+
+### Test Automation Engineer @ Unilever
+**Nov 2023 – Jan 2025**
+
+- Built scalable automation frameworks using Java, Selenium, Cucumber
+- Integrated automation into CI/CD pipelines
+- Supported microservices on GCP and managed Oracle/MySQL databases
+- Reduced manual testing effort and improved deployment reliability
+
+---
+
+## 🌐 Connect With Me
+
+- **Website:** [kamelahmed.github.io](https://kamelahmed.github.io)
+- **LinkedIn:** [linkedin.com/in/kamel-ahmed-1308](https://linkedin.com/in/kamel-ahmed-1308/)
+- **GitHub:** [github.com/KamelAhmed813](https://github.com/KamelAhmed813)
+- **Email:** [kamel_ahmed395@gmail.com](mailto:kamel_ahmed395@gmail.com)
+- **Schedule a Call:** [Calendly](https://calendly.com/kamelahmed813)
+
+---
+
+## 🎯 Portfolio Website
+
+This repository contains my personal portfolio website featuring:
 
 - 🌐 **Bilingual Support**: English and Arabic with RTL support
 - 🌙 **Dark Mode**: Theme switching with persistence
 - 📱 **Responsive Design**: Mobile-first, works on all devices
 - 🎨 **Modern UI**: Built with Tailwind CSS
-- 💬 **Chat Interface**: AI-powered chat with digital persona
+- 💬 **AI Chat Interface**: Chat with my digital persona powered by Google Gemini
 - 📧 **Contact Form**: Integrated contact form with validation
 - 🚀 **Fast & Lightweight**: Vanilla JavaScript, no heavy frameworks
 
-## Quick Start
+### Tech Stack (Portfolio)
 
-### Option 1: Using Python HTTP Server (Recommended)
+- **Frontend**: Vanilla JavaScript, HTML5, Tailwind CSS
+- **Backend**: FastAPI (Python), structured logging
+- **AI Integration**: Google Gemini API
+- **Features**: i18n, dark mode, session management, rate limiting
 
-1. **Start the server:**
-   ```bash
-   # Windows
-   python start-server.py
-   # or double-click start-server.bat
-   
-   # Linux/Mac
-   python3 start-server.py
-   ```
+---
 
-2. **Open in browser:**
-   - The server will automatically open `http://localhost:8080/index.html`
-   - Or manually navigate to: `http://localhost:8080/index.html`
+## 📝 License
 
-### Option 2: Using Python's Built-in Server
+This portfolio website is open source and available under the [MIT License](LICENSE).
 
-```bash
-# Navigate to the project directory
-cd "Digital version"
+---
 
-# Start server (Python 3)
-python -m http.server 8080
+<div align="center">
 
-# Or (Python 2)
-python -m SimpleHTTPServer 8080
-```
+**Let's build something amazing together!** 🚀
 
-Then open: `http://localhost:8080/index.html`
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kamel_ahmed395@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kamel-ahmed-1308/)
+[Calendly](https://calendly.com/kamelahmed813)
 
-### Option 3: Using Node.js http-server
-
-```bash
-# Install http-server globally (one time)
-npm install -g http-server
-
-# Start server
-http-server -p 8080
-```
-
-## Backend Integration
-
-The backend API is configured in `js/api-config.js`. By default, it points to:
-- Development: `http://localhost:8000`
-- Production: Update `API_BASE_URL` in `api-config.js`
-
-### To use a different backend URL:
-
-1. **Before loading the page**, set the API URL:
-   ```html
-   <script>
-     window.API_BASE_URL = 'http://your-backend-url:8000';
-   </script>
-   <script src="js/api-config.js"></script>
-   ```
-
-2. **Or edit** `js/api-config.js` directly:
-   ```javascript
-   const API_BASE_URL = 'http://your-backend-url:8000';
-   ```
-
-## Project Structure
-
-```
-.
-├── index.html          # Main portfolio page
-├── chat.html           # Chat interface
-|
-├── assets/
-│   ├── icons           # Custom icons
-│   └── images/
-│       ├── blog/          # Add blog images
-│       ├── hero/          # Add the hero section image
-│       ├── projects/      # Add the project images
-│       └── testimonials/  # Add testimonials person images
-|
-├── backend/           # Directory for the backend project
-|
-├── css/
-│   ├── style.css      # Custom styles and animations
-│   └── themes.css     # Theme variables
-├── js/
-│   ├── app.js         # Rendering functions
-│   ├── i18n.js        # Internationalization
-│   ├── theme.js       # Theme management
-│   └── api-config.js  # API configuration
-├── data/
-│   ├── content.en.json # English content
-│   └── content.ar.json # Arabic content
-└── start-server.py    # Local development server
-```
-
-## Development
-
-### Adding Content
-
-Edit the JSON files in `data/`:
-- `content.en.json` - English content
-- `content.ar.json` - Arabic content
-
-### Customizing Styles
-
-- `css/style.css` - Custom animations and utilities
-- `css/themes.css` - Theme color variables
-- Tailwind CSS classes in HTML files
-
-### API Endpoints
-
-The frontend expects these backend endpoints:
-- `POST /api/contact` - Contact form submission
-- `POST /api/chat` - Chat message handling
-- `GET /api/chat/history/:sessionId` - Chat history (optional)
-- `GET /api/health` - Health check (optional)
-
-## Troubleshooting
-
-### "Failed to load content" Error
-
-**Problem**: Opening `index.html` directly from file system.
-
-**Solution**: Use a web server (see Quick Start above). Browsers block local file fetches for security.
-
-### CORS Errors
-
-**Problem**: API calls blocked by CORS policy.
-
-**Solution**: 
-1. Ensure backend has CORS enabled for your frontend domain
-2. Use the same origin for frontend and backend, or
-3. Configure CORS headers in your backend
-
-### Content Not Loading
-
-1. Check browser console for errors
-2. Verify JSON files exist in `data/` directory
-3. Ensure server is running and accessible
-4. Check file paths are correct
-
-## Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## License
-
-MIT License - feel free to use this for your own portfolio!
-
+</div>
