@@ -1,0 +1,7 @@
+# This file ensures the images directory is tracked by git
+# Add your images to the appropriate subdirectories:
+# - hero/ for profile photos
+# - projects/ for project screenshots
+# - blog/ for blog post images
+# - testimonials/ for testimonial avatars
+

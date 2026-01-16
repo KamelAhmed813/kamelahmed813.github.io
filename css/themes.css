@@ -1,0 +1,80 @@
+/**
+ * Theme System
+ * Uses CSS custom properties for theming
+ */
+
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --card-bg: #1e293b;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Override Tailwind dark mode with our custom theme */
+[data-theme="dark"] .dark\:bg-slate-800\/50 {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .dark\:bg-gray-800 {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .dark\:text-gray-100 {
+  color: var(--text);
+}
+
+[data-theme="dark"] .dark\:text-gray-300 {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .dark\:text-gray-400 {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .dark\:border-gray-600 {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .dark\:border-gray-700 {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .dark\:border-gray-800 {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .dark\:bg-gray-900\/80 {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}

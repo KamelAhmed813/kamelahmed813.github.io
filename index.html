@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamel Ahmed | AI Engineer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-smooth">
+    <nav class="container mx-auto px-4 py-3 flex justify-end items-center gap-4">
+      <button 
+        onclick="toggleLanguage()" 
+        class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-smooth"
+        aria-label="Toggle language"
+      >
+        <span id="lang-toggle">AR / EN</span>
+      </button>
+      <button 
+        onclick="toggleTheme()" 
+        data-theme-toggle
+        class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-smooth"
+        aria-label="Toggle theme"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-4 py-20 mt-16">
+      <div class="container mx-auto max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div class="flex-1 text-center md:text-left animate-fade-in">
+            <h1 id="hero-name" class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"></h1>
+            <h2 id="hero-title" class="text-2xl md:text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300"></h2>
+            <p id="hero-subtitle" class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl"></p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <button 
+                id="hero-cta" 
+                onclick="goToChat()"
+                class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-smooth transform"
+              ></button>
+              <button 
+                onclick="scrollToSection('projects')"
+                class="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-smooth"
+              >
+                <span id="view-projects-text">View Projects</span>
+              </button>
+            </div>
+          </div>
+          <div class="flex-1 flex justify-center animate-slide-in-right">
+            <div id="hero-image-container" class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+              <i class="fas fa-user-circle text-white text-9xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 bg-gray-50 dark:bg-slate-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <h2 id="about-heading" class="text-4xl font-bold mb-12 text-center"></h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="animate-slide-up">
+            <h3 class="text-2xl font-semibold mb-4" id="about-story-title">My Story</h3>
+            <p id="about-story" class="text-gray-700 dark:text-gray-300 leading-relaxed"></p>
+          </div>
+          <div class="animate-slide-up" style="animation-delay: 0.2s;">
+            <h3 class="text-2xl font-semibold mb-4" id="about-skills-title">Key Skills</h3>
+            <div id="about-skills-summary" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <!-- Timeline -->
+        <div id="timeline-container" class="mt-16"></div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-4xl font-bold mb-12 text-center" id="experience-heading">Experience</h2>
+        <div id="experience-list"></div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <h2 id="projects-heading" class="text-4xl font-bold mb-12 text-center"></h2>
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gray-50 dark:bg-slate-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <h2 id="skills-heading" class="text-4xl font-bold mb-12 text-center"></h2>
+        <div id="skills-container"></div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <h2 id="testimonials-heading" class="text-4xl font-bold mb-12 text-center"></h2>
+        <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- Blog/Articles Section -->
+    <section id="blog" class="py-20 px-4 bg-gray-50 dark:bg-slate-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <h2 id="blog-heading" class="text-4xl font-bold mb-12 text-center"></h2>
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+      <div class="container mx-auto max-w-4xl">
+        <h2 id="contact-heading" class="text-4xl font-bold mb-4 text-center"></h2>
+        <p id="contact-text" class="text-center text-gray-600 dark:text-gray-400 mb-12"></p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Contact Form -->
+          <div class="animate-slide-up">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="contact-name" class="block mb-2 font-medium"></label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-smooth"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="block mb-2 font-medium"></label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-smooth"
+                />
+              </div>
+              <div>
+                <label for="contact-subject" class="block mb-2 font-medium"></label>
+                <input 
+                  type="text" 
+                  id="contact-subject" 
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-smooth"
+                />
+              </div>
+              <div>
+                <label for="contact-message" class="block mb-2 font-medium"></label>
+                <textarea 
+                  id="contact-message" 
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-smooth resize-none"
+                ></textarea>
+              </div>
+              <button 
+                type="submit"
+                class="w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-smooth transform"
+              >
+                <span id="contact-submit-text">Send Message</span>
+              </button>
+              <div id="contact-form-message" class="mt-4 text-center"></div>
+            </form>
+          </div>
+          
+          <!-- Social Links & Info -->
+          <div class="animate-slide-up" style="animation-delay: 0.2s;">
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-2xl font-semibold mb-4" id="contact-social-title">Connect With Me</h3>
+                <div id="social-links" class="flex flex-col gap-4"></div>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold mb-4" id="contact-calendar-title">Schedule a Meeting</h3>
+                <a 
+                  id="calendar-link"
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-smooth"
+                >
+                  <i class="fas fa-calendar"></i>
+                  <span id="calendar-link-text">Book a Call</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button 
+    id="scroll-to-top"
+    onclick="scrollToTop()"
+    class="fixed bottom-8 right-8 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-smooth opacity-0 pointer-events-none z-40"
+    aria-label="Scroll to top"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/api-config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

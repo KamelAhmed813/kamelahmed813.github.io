@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "name": "Kamel Ahmed",
+    "title": "AI Engineer",
+    "subtitle": "Building production-grade AI systems, not just demos.",
+    "cta": "Talk to my AI Persona",
+    "image": "assets/images/hero/hero.jpg"
+  },
+  "about": {
+    "heading": "About Me",
+    "text": "I am an AI Engineer at Link Datacenter (LDC) with a strong background in backend systems, automation, and production-ready LLM architectures. I focus on building AI systems that are reliable, observable, and scalable in real-world environments.",
+    "story": "With a passion for solving complex problems through technology, I've dedicated my career to building robust AI systems that make a real impact. My journey started in test automation and backend development, which gave me a strong foundation in software engineering principles. Today, I specialize in production-grade RAG systems, LLM infrastructure, and agentic workflows that power real-world applications.",
+    "skillsSummary": [
+      "Production-Grade AI Systems",
+      "RAG & Graph-RAG Architectures",
+      "LLM Infrastructure & MLOps",
+      "Backend Development",
+      "Test Automation & CI/CD"
+    ],
+    "storyTitle": "My Story",
+    "skillsTitle": "Key Skills"
+  },
+  "experience": [
+    {
+      "company": "Link Datacenter (LDC)",
+      "role": "AI Engineer",
+      "period": "Feb 2025 – Present",
+      "details": [
+        "Designed and deployed production-grade RAG and Graph-RAG systems using Neo4j.",
+        "Built LLM infrastructure using vLLM on GPU clusters.",
+        "Developed AI APIs and agentic workflows using LangGraph and MCP.",
+        "Worked across backend, AI logic, infrastructure, and MLOps."
+      ]
+    },
+    {
+      "company": "Unilever",
+      "role": "Test Automation Engineer",
+      "period": "Nov 2023 – Jan 2025",
+      "details": [
+        "Built scalable automation frameworks using Java, Selenium, Cucumber.",
+        "Integrated automation into CI/CD pipelines.",
+        "Supported microservices on GCP and managed Oracle/MySQL databases."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Production RAG System",
+      "description": "Built a scalable RAG system using Neo4j for knowledge graph storage, enabling semantic search and retrieval across large document corpora.",
+      "image": "assets/images/projects/rag-system.webp",
+      "techStack": ["Neo4j", "Python", "LangChain", "vLLM"],
+      "metrics": "99.9% uptime, <200ms latency",
+      "link": "#",
+      "github": ""
+    },
+    {
+      "title": "LLM Infrastructure Platform",
+      "description": "Designed and deployed vLLM-based infrastructure for serving multiple LLM models on GPU clusters with efficient resource management.",
+      "image": "assets/images/projects/llm-infrastructure.png",
+      "techStack": ["vLLM", "Python", "Docker", "Kubernetes"],
+      "metrics": "10x throughput improvement",
+      "link": "#",
+      "github": ""
+    },
+    {
+      "title": "Agentic Workflow System",
+      "description": "Developed multi-agent systems using LangGraph and MCP for complex task orchestration and decision-making workflows.",
+      "image": "assets/images/projects/agentic-workflow.jpg",
+      "techStack": ["LangGraph", "MCP", "Python", "FastAPI"],
+      "metrics": "50+ workflow templates",
+      "link": "#",
+      "github": ""
+    },
+    {
+      "title": "Housing Data Mining",
+      "description": "Developed a data mining system for housing data using Python and pandas.",
+      "image": "assets/images/projects/data-mining.jpg",
+      "techStack": ["Python", "pandas", "numpy", "matplotlib"],
+      "metrics": "100+ data points analysis",
+      "link": "#",
+      "github": "https://github.com/KamelAhmed813/DataMining"
+    }
+  ],
+  "skills": [
+    {
+      "category": "AI/ML",
+      "items": [
+        {
+          "name": "RAG & Graph-RAG",
+          "icon": "fas fa-brain",
+          "description": "Production-grade retrieval-augmented generation systems"
+        },
+        {
+          "name": "LLM Infrastructure",
+          "icon": "fas fa-server",
+          "description": "vLLM, model serving, GPU optimization"
+        },
+        {
+          "name": "LangGraph & Agents",
+          "icon": "fas fa-project-diagram",
+          "description": "Multi-agent systems and workflow orchestration"
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        {
+          "name": "Python",
+          "icon": "fab fa-python",
+          "description": "Backend APIs, data processing, ML pipelines"
+        },
+        {
+          "name": "Java",
+          "icon": "fab fa-java",
+          "description": "Enterprise applications, microservices"
+        },
+        {
+          "name": "C# / .NET",
+          "icon": "fab fa-microsoft",
+          "description": "Windows applications, enterprise solutions"
+        }
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        {
+          "name": "Neo4j",
+          "icon": "fas fa-database",
+          "description": "Graph database for knowledge graphs"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "fas fa-database",
+          "description": "Relational database management"
+        },
+        {
+          "name": "Oracle",
+          "icon": "fas fa-database",
+          "description": "Enterprise database systems"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": [
+        {
+          "name": "CI/CD",
+          "icon": "fas fa-code-branch",
+          "description": "Jenkins, GitHub Actions, automation pipelines"
+        },
+        {
+          "name": "Docker & Kubernetes",
+          "icon": "fab fa-docker",
+          "description": "Containerization and orchestration"
+        },
+        {
+          "name": "Test Automation",
+          "icon": "fas fa-vial",
+          "description": "Selenium, Cucumber, framework design"
+        }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Kamel's expertise in building production-grade AI systems is exceptional. His RAG implementations have significantly improved our search capabilities.",
+      "author": "Tech Lead",
+      "role": "Engineering Manager",
+      "company": "Link Datacenter",
+      "avatar": "assets/images/testimonials/male persone placeholder.jpg"
+    },
+    {
+      "quote": "Working with Kamel on automation frameworks was a great experience. He delivers robust, scalable solutions on time.",
+      "author": "Project Manager",
+      "role": "Senior PM",
+      "company": "Unilever",
+      "avatar": "assets/images/testimonials/female persone placeholder.jpg"
+    }
+  ],
+  "blog": [
+    {
+      "title": "Building Production RAG Systems: Lessons Learned",
+      "excerpt": "Key insights from deploying RAG systems at scale, including performance optimization and reliability patterns.",
+      "date": "2025-01-15",
+      "image": "assets/images/blog/rag-system.webp",
+      "slug": "building-production-rag-systems",
+      "link": "blog.html?slug=building-production-rag-systems"
+    },
+    {
+      "title": "LLM Infrastructure Best Practices",
+      "excerpt": "A deep dive into serving multiple LLM models efficiently using vLLM and GPU cluster management.",
+      "date": "2025-01-10",
+      "image": "assets/images/blog/llm-infrastructure.png",
+      "slug": "llm-infrastructure-best-practices",
+      "link": "blog.html?slug=llm-infrastructure-best-practices"
+    },
+    {
+      "title": "From Automation to AI: My Career Journey",
+      "excerpt": "Reflections on transitioning from test automation to AI engineering and the skills that transfer.",
+      "date": "2025-01-05",
+      "image": "assets/images/blog/automation.jpg",
+      "slug": "from-automation-to-ai",
+      "link": "blog.html?slug=from-automation-to-ai"
+    }
+  ],
+  "contact": {
+    "heading": "Get in Touch",
+    "text": "Interested in collaboration, hiring, or discussing AI systems?",
+    "email": "contact@kamelahmed.dev",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "subjectLabel": "Subject",
+      "messageLabel": "Message",
+      "submitText": "Send Message",
+      "successMessage": "Thank you! Your message has been sent.",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/kamel-ahmed-1308/",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/KamelAhmed813",
+        "icon": "fab fa-github"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/Kamel.Ahmed.Al.yassergy",
+        "icon": "fab fa-facebook"
+      }
+    ],
+    "calendarLink": "https://calendly.com/kamelahmed813",
+    "socialTitle": "Connect With Me",
+    "calendarTitle": "Schedule a Meeting",
+    "calendarLinkText": "Book a Call"
+  },
+  "ui": {
+    "viewProjects": "View Projects",
+    "projectsHeading": "Featured Projects",
+    "skillsHeading": "Technical Skills",
+    "testimonialsHeading": "Testimonials",
+    "blogHeading": "Blog & Articles",
+    "experienceHeading": "Experience",
+    "timelineTitle": "Career Timeline"
+  },
+  "chat": {
+    "title": "Chat with my Digital Persona",
+    "subtitle": "Ask me anything about my experience, projects, or availability.",
+    "welcomeMessage": "Hi, I'm Kamel's digital professional persona. Ask me anything about my experience, projects, or availability.",
+    "placeholder": "Type your message...",
+    "backToPortfolio": "Back to Portfolio",
+    "typing": "Typing...",
+    "connected": "Backend connected",
+    "connectionIssue": "Backend connection issue",
+    "notReachable": "Backend not reachable"
+  }
+}

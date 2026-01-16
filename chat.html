@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat with Kamel</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-smooth">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-smooth">
+        <i class="fas fa-arrow-left"></i>
+        <span id="back-to-portfolio">Back to Portfolio</span>
+      </a>
+      <div class="flex gap-4">
+        <button 
+          onclick="toggleLanguage()" 
+          class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-smooth"
+          aria-label="Toggle language"
+        >
+          <span id="lang-toggle">AR / EN</span>
+        </button>
+        <button 
+          onclick="toggleTheme()" 
+          data-theme-toggle
+          class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-smooth"
+          aria-label="Toggle theme"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen pt-20 pb-8 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <!-- Chat Header -->
+      <div class="text-center mb-8 animate-fade-in">
+        <h1 id="chat-title" class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Chat with my Digital Persona
+        </h1>
+        <p id="chat-subtitle" class="text-gray-600 dark:text-gray-400 text-lg">
+          Ask me anything about my experience, projects, or availability.
+        </p>
+</div>
+
+      <!-- Chat Container -->
+      <div id="chat-box" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6 min-h-[400px] max-h-[600px] overflow-y-auto flex flex-col gap-4">
+        <div class="flex items-start gap-4 animate-slide-up">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-robot text-white"></i>
+          </div>
+          <div class="flex-1">
+            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+              <p id="chat-welcome-message" class="text-gray-800 dark:text-gray-200">
+                Hi, I'm Kamel's digital professional persona. Ask me anything about my experience, projects, or availability.
+              </p>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Just now</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Indicator (hidden by default) -->
+      <div id="typing-indicator" class="hidden mb-4">
+        <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+          <div class="flex gap-1">
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
+          </div>
+          <span id="typing-text" class="text-sm">Typing...</span>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="flex gap-4">
+        <input 
+          id="user-input" 
+          type="text" 
+          placeholder="Type your message..." 
+          data-placeholder-en="Type your message..."
+          data-placeholder-ar="اكتب رسالتك..."
+          class="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-smooth"
+          onkeypress="handleChatKeyPress(event)"
+        />
+        <button 
+          id="send-button"
+          onclick="sendMessage()"
+          class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-smooth transform disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Send message"
+        >
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <!-- Error Message -->
+      <div id="chat-error" class="hidden mt-4 p-4 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-center">
+        <i class="fas fa-exclamation-circle mr-2"></i>
+        <span>Failed to send message. Please try again.</span>
+      </div>
+      
+      <!-- Connection Status -->
+      <div id="connection-status" class="hidden mt-2 text-center">
+        <span class="text-xs text-gray-500 dark:text-gray-400">
+          <i class="fas fa-circle text-green-500 animate-pulse mr-1"></i>
+          <span id="connection-text" data-text-en="Backend connected" data-text-ar="متصل بالخادم">Backend connected</span>
+        </span>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api-config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+<script>
+    // Chat functionality
+    let chatSessionId = localStorage.getItem('chat-session-id') || generateSessionId();
+    let currentChatLang = localStorage.getItem('portfolio-lang') || 'en';
+    
+    // Test backend connection on load
+    async function testBackendConnection() {
+      try {
+        let apiUrl;
+        if (typeof getApiEndpoint !== 'undefined') {
+          apiUrl = getApiEndpoint('health');
+        } else if (typeof API_ENDPOINTS !== 'undefined' && API_ENDPOINTS.health) {
+          apiUrl = API_ENDPOINTS.health;
+        } else {
+          apiUrl = 'http://localhost:8000/api/health';
+        }
+        
+        const response = await fetch(apiUrl, { method: 'GET' });
+        const statusDiv = document.getElementById('connection-status');
+        const statusText = document.getElementById('connection-text');
+        
+        // Get current language for translations
+        const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+        
+        if (response.ok) {
+          if (statusDiv) {
+            statusDiv.classList.remove('hidden');
+            if (statusText) {
+              // Use translated text if available
+              const translatedText = statusText.getAttribute(`data-text-${currentLang}`);
+              statusText.textContent = translatedText || 'Backend connected';
+            }
+          }
+        } else {
+          if (statusDiv) {
+            statusDiv.classList.remove('hidden');
+            if (statusText) {
+              const translatedText = statusText.getAttribute(`data-text-${currentLang}`);
+              statusText.textContent = translatedText || 'Backend connection issue';
+            }
+            statusDiv.querySelector('i').classList.remove('text-green-500');
+            statusDiv.querySelector('i').classList.add('text-yellow-500');
+          }
+        }
+      } catch (error) {
+        console.warn('Backend health check failed:', error);
+        const statusDiv = document.getElementById('connection-status');
+        const statusText = document.getElementById('connection-text');
+        const currentLang = localStorage.getItem('portfolio-lang') || 'en';
+        if (statusDiv) {
+          statusDiv.classList.remove('hidden');
+          if (statusText) {
+            const translatedText = statusText.getAttribute(`data-text-${currentLang}`);
+            statusText.textContent = translatedText || 'Backend not reachable';
+          }
+          const icon = statusDiv.querySelector('i');
+          if (icon) {
+            icon.classList.remove('text-green-500', 'animate-pulse');
+            icon.classList.add('text-red-500');
+          }
+        }
+      }
+    }
+
+    function generateSessionId() {
+      return 'chat-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    }
+
+    function handleChatKeyPress(event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('user-input');
+      if (!input) {
+        console.error('User input element not found');
+        return;
+      }
+      
+      const message = input.value.trim();
+      
+      if (!message) return;
+
+      // Clear input
+      input.value = '';
+      
+      // Disable input and button
+      input.disabled = true;
+      const sendButton = document.getElementById('send-button');
+      if (sendButton) {
+        sendButton.disabled = true;
+      }
+
+      // Add user message to chat
+      addMessageToChat(message, 'user');
+
+      // Show typing indicator
+      const typingIndicator = document.getElementById('typing-indicator');
+      if (typingIndicator) {
+        typingIndicator.classList.remove('hidden');
+      }
+
+      try {
+        // Get API endpoint from config
+        let apiUrl;
+        if (typeof getApiEndpoint !== 'undefined') {
+          apiUrl = getApiEndpoint('chat');
+        } else if (typeof API_ENDPOINTS !== 'undefined' && API_ENDPOINTS.chat) {
+          apiUrl = API_ENDPOINTS.chat;
+        } else {
+          apiUrl = 'http://localhost:8000/api/chat';
+        }
+        
+        console.log('Sending chat request to:', apiUrl);
+        
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: message,
+            session_id: chatSessionId || null, // Backend expects snake_case
+            language: currentChatLang || 'en'
+          })
+        });
+
+        if (typingIndicator) {
+          typingIndicator.classList.add('hidden');
+        }
+
+        // Parse response
+        let data;
+        try {
+          data = await response.json();
+        } catch (parseError) {
+          console.error('Failed to parse response:', parseError);
+          throw new Error(`Invalid response from server (${response.status})`);
+        }
+
+        if (response.ok) {
+          // Backend returns message, session_id, timestamp
+          if (data.message) {
+            addMessageToChat(data.message, 'assistant');
+          } else {
+            throw new Error('No message in response');
+          }
+          
+          // Update session ID if provided (backend uses snake_case)
+          if (data.session_id) {
+            chatSessionId = data.session_id;
+            localStorage.setItem('chat-session-id', chatSessionId);
+          }
+        } else {
+          // Handle error response from backend
+          const errorMessage = data?.detail?.message || data?.message || `Server error (${response.status})`;
+          const errors = data?.detail?.errors || [];
+          
+          console.error('Chat API error:', {
+            status: response.status,
+            statusText: response.statusText,
+            data: data
+          });
+          
+          throw new Error(errorMessage + (errors.length > 0 ? ': ' + errors.join(', ') : ''));
+        }
+      } catch (error) {
+        console.error('Chat error:', error);
+        if (typingIndicator) {
+          typingIndicator.classList.add('hidden');
+        }
+        
+        // Show detailed error message
+        let errorMessage = 'Sorry, I encountered an error. ';
+        if (error.message) {
+          if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+            errorMessage += 'Cannot connect to the server. Please check if the backend is running.';
+          } else {
+            errorMessage += error.message;
+          }
+        } else {
+          errorMessage += 'Please try again.';
+        }
+        
+        showChatError(errorMessage);
+        addMessageToChat(errorMessage, 'assistant');
+      } finally {
+        if (input) {
+          input.disabled = false;
+          input.focus();
+        }
+        if (sendButton) {
+          sendButton.disabled = false;
+        }
+      }
+    }
+
+    function addMessageToChat(message, sender) {
+      const chatBox = document.getElementById('chat-box');
+      if (!chatBox) {
+        console.error('Chat box element not found');
+        return;
+      }
+      
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `flex items-start gap-4 animate-slide-up ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+      
+      const timestamp = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+      
+      // Escape message to prevent XSS
+      const escapedMessage = message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      
+      // Build classes properly for Tailwind
+      const avatarClasses = sender === 'user' 
+        ? 'w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0'
+        : 'w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center flex-shrink-0';
+      
+      const messageBubbleClasses = sender === 'user'
+        ? 'bg-blue-600 text-white rounded-lg p-4 inline-block max-w-[80%]'
+        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg p-4 inline-block max-w-[80%]';
+      
+      const iconClass = sender === 'user' ? 'fa-user' : 'fa-robot';
+      const textAlignClass = sender === 'user' ? 'text-right' : '';
+      
+      messageDiv.innerHTML = `
+        <div class="${avatarClasses}">
+          <i class="fas ${iconClass} text-white"></i>
+        </div>
+        <div class="flex-1 ${textAlignClass}">
+          <div class="${messageBubbleClasses}">
+            <p>${escapedMessage}</p>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">${timestamp}</p>
+        </div>
+      `;
+      
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function showChatError(message) {
+      const errorDiv = document.getElementById('chat-error');
+      const errorSpan = errorDiv.querySelector('span');
+      if (errorSpan && message) {
+        errorSpan.textContent = message;
+      }
+      errorDiv.classList.remove('hidden');
+      setTimeout(() => {
+        errorDiv.classList.add('hidden');
+      }, 8000);
+    }
+
+    // Initialize chat
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('user-input');
+      if (input) input.focus();
+      
+      // Test backend connection
+      testBackendConnection();
+      
+      // Load chat history if available (optional)
+      // loadChatHistory();
+    });
+
+    // Language toggle is now handled by i18n.js (globally accessible)
+    // The toggleLanguage function from i18n.js will handle chat page updates
+</script>
+</body>
+</html>

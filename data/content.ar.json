@@ -1,0 +1,254 @@
+{
+  "hero": {
+    "name": "كامل أحمد",
+    "title": "مهندس ذكاء اصطناعي",
+    "subtitle": "أبني أنظمة ذكاء اصطناعي تعمل في الإنتاج، وليس مجرد نماذج تجريبية.",
+    "cta": "تحدث مع نسختي الرقمية",
+    "image": ""
+  },
+  "about": {
+    "heading": "نبذة عني",
+    "text": "أنا مهندس ذكاء اصطناعي في Link Datacenter مع خبرة قوية في الأنظمة الخلفية، الأتمتة، وبناء أنظمة LLM جاهزة للإنتاج. أركز على بناء حلول موثوقة وقابلة للتوسع.",
+    "story": "مع شغف بحل المشاكل المعقدة من خلال التكنولوجيا، كرست مسيرتي المهنية لبناء أنظمة ذكاء اصطناعي قوية تحدث تأثيراً حقيقياً. بدأت رحلتي في أتمتة الاختبارات والتطوير الخلفي، مما أعطاني أساساً قوياً في مبادئ هندسة البرمجيات. اليوم، أتخصص في أنظمة RAG جاهزة للإنتاج، بنية LLM، وسير عمل الوكيل التي تشغل التطبيقات في العالم الحقيقي.",
+    "skillsSummary": [
+      "أنظمة الذكاء الاصطناعي الجاهزة للإنتاج",
+      "معماريات RAG و Graph-RAG",
+      "بنية LLM و MLOps",
+      "التطوير الخلفي",
+      "أتمتة الاختبارات و CI/CD"
+    ],
+    "storyTitle": "قصتي",
+    "skillsTitle": "المهارات الرئيسية"
+  },
+  "experience": [
+    {
+      "company": "Link Datacenter",
+      "role": "مهندس ذكاء اصطناعي",
+      "period": "فبراير 2025 – حتى الآن",
+      "details": [
+        "تصميم وتنفيذ أنظمة RAG و Graph-RAG باستخدام Neo4j.",
+        "بناء بنية LLM باستخدام vLLM على GPU clusters.",
+        "تطوير AI APIs و agentic workflows باستخدام LangGraph و MCP.",
+        "العمل عبر الخلفية، منطق AI، البنية التحتية، و MLOps."
+      ]
+    },
+    {
+      "company": "Unilever",
+      "role": "مهندس أتمتة اختبارات",
+      "period": "نوفمبر 2023 – يناير 2025",
+      "details": [
+        "بناء أطر أتمتة باستخدام Java و Selenium و Cucumber.",
+        "دمج الأتمتة في CI/CD pipelines.",
+        "دعم microservices على GCP وإدارة قواعد بيانات Oracle/MySQL."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "نظام RAG للإنتاج",
+      "description": "بناء نظام RAG قابل للتوسع باستخدام Neo4j لتخزين معرفة الرسم البياني، مما يتيح البحث الدلالي والاسترجاع عبر مجموعات المستندات الكبيرة.",
+      "image": "",
+      "techStack": ["Neo4j", "Python", "LangChain", "vLLM"],
+      "metrics": "99.9% وقت التشغيل، <200ms زمن الاستجابة",
+      "link": "#",
+      "github": ""
+    },
+    {
+      "title": "منصة بنية LLM",
+      "description": "تصميم ونشر بنية قائمة على vLLM لخدمة نماذج LLM متعددة على GPU clusters مع إدارة فعالة للموارد.",
+      "image": "",
+      "techStack": ["vLLM", "Python", "Docker", "Kubernetes"],
+      "metrics": "تحسين الإنتاجية 10x",
+      "link": "#",
+      "github": ""
+    },
+    {
+      "title": "نظام سير عمل الوكيل",
+      "description": "تطوير أنظمة متعددة الوكلاء باستخدام LangGraph و MCP لتنسيق المهام المعقدة وسير عمل اتخاذ القرار.",
+      "image": "",
+      "techStack": ["LangGraph", "MCP", "Python", "FastAPI"],
+      "metrics": "50+ قوالب سير العمل",
+      "link": "#",
+      "github": ""
+    }
+  ],
+  "skills": [
+    {
+      "category": "الذكاء الاصطناعي/التعلم الآلي",
+      "items": [
+        {
+          "name": "RAG و Graph-RAG",
+          "icon": "fas fa-brain",
+          "description": "أنظمة توليد معززة بالاسترجاع جاهزة للإنتاج"
+        },
+        {
+          "name": "بنية LLM",
+          "icon": "fas fa-server",
+          "description": "vLLM، خدمة النماذج، تحسين GPU"
+        },
+        {
+          "name": "LangGraph والوكلاء",
+          "icon": "fas fa-project-diagram",
+          "description": "أنظمة متعددة الوكلاء وتنسيق سير العمل"
+        }
+      ]
+    },
+    {
+      "category": "الخلفية",
+      "items": [
+        {
+          "name": "Python",
+          "icon": "fab fa-python",
+          "description": "APIs الخلفية، معالجة البيانات، خطوط ML"
+        },
+        {
+          "name": "Java",
+          "icon": "fab fa-java",
+          "description": "تطبيقات المؤسسات، microservices"
+        },
+        {
+          "name": "C# / .NET",
+          "icon": "fab fa-microsoft",
+          "description": "تطبيقات Windows، حلول المؤسسات"
+        }
+      ]
+    },
+    {
+      "category": "قواعد البيانات",
+      "items": [
+        {
+          "name": "Neo4j",
+          "icon": "fas fa-database",
+          "description": "قاعدة بيانات الرسم البياني لرسوم المعرفة"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "fas fa-database",
+          "description": "إدارة قواعد البيانات العلائقية"
+        },
+        {
+          "name": "Oracle",
+          "icon": "fas fa-database",
+          "description": "أنظمة قواعد بيانات المؤسسات"
+        }
+      ]
+    },
+    {
+      "category": "DevOps والأدوات",
+      "items": [
+        {
+          "name": "CI/CD",
+          "icon": "fas fa-code-branch",
+          "description": "Jenkins، GitHub Actions، خطوط الأتمتة"
+        },
+        {
+          "name": "Docker و Kubernetes",
+          "icon": "fab fa-docker",
+          "description": "الحاويات والتنسيق"
+        },
+        {
+          "name": "أتمتة الاختبارات",
+          "icon": "fas fa-vial",
+          "description": "Selenium، Cucumber، تصميم الأطر"
+        }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "خبرة كامل في بناء أنظمة الذكاء الاصطناعي الجاهزة للإنتاج استثنائية. تنفيذاته RAG حسنت قدرات البحث لدينا بشكل كبير.",
+      "author": "قائد تقني",
+      "role": "مدير هندسة",
+      "company": "Link Datacenter",
+      "avatar": ""
+    },
+    {
+      "quote": "العمل مع كامل على أطر الأتمتة كانت تجربة رائعة. يقدم حلولاً قوية وقابلة للتوسع في الوقت المحدد.",
+      "author": "مدير المشروع",
+      "role": "مدير مشروع أول",
+      "company": "Unilever",
+      "avatar": ""
+    }
+  ],
+  "blog": [
+    {
+      "title": "بناء أنظمة RAG للإنتاج: الدروس المستفادة",
+      "excerpt": "رؤى رئيسية من نشر أنظمة RAG على نطاق واسع، بما في ذلك تحسين الأداء وأنماط الموثوقية.",
+      "date": "2025-01-15",
+      "image": "assets/images/blog/production-rag-systems.jpg",
+      "slug": "building-production-rag-systems",
+      "link": "blog.html?slug=building-production-rag-systems"
+    },
+    {
+      "title": "أفضل ممارسات بنية LLM",
+      "excerpt": "غوص عميق في خدمة نماذج LLM متعددة بكفاءة باستخدام vLLM وإدارة GPU clusters.",
+      "date": "2025-01-10",
+      "image": "assets/images/blog/llm-best-practices.jpg",
+      "slug": "llm-infrastructure-best-practices",
+      "link": "blog.html?slug=llm-infrastructure-best-practices"
+    },
+    {
+      "title": "من الأتمتة إلى الذكاء الاصطناعي: رحلتي المهنية",
+      "excerpt": "تأملات في الانتقال من أتمتة الاختبارات إلى هندسة الذكاء الاصطناعي والمهارات التي تنتقل.",
+      "date": "2025-01-05",
+      "image": "assets/images/blog/career-journey.jpg",
+      "slug": "from-automation-to-ai",
+      "link": "blog.html?slug=from-automation-to-ai"
+    }
+  ],
+  "contact": {
+    "heading": "تواصل معي",
+    "text": "مهتم بالتعاون أو التوظيف أو مناقشة حلول الذكاء الاصطناعي؟",
+    "email": "contact@kamelahmed.dev",
+    "form": {
+      "nameLabel": "الاسم",
+      "emailLabel": "البريد الإلكتروني",
+      "subjectLabel": "الموضوع",
+      "messageLabel": "الرسالة",
+      "submitText": "إرسال الرسالة",
+      "successMessage": "شكراً لك! تم إرسال رسالتك.",
+      "errorMessage": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    },
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/kamelahmed",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/kamelahmed",
+        "icon": "fab fa-github"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/kamelahmed",
+        "icon": "fab fa-twitter"
+      }
+    ],
+    "calendarLink": "https://calendly.com/kamelahmed",
+    "socialTitle": "تواصل معي",
+    "calendarTitle": "جدولة اجتماع",
+    "calendarLinkText": "احجز مكالمة"
+  },
+  "ui": {
+    "viewProjects": "عرض المشاريع",
+    "projectsHeading": "المشاريع المميزة",
+    "skillsHeading": "المهارات التقنية",
+    "testimonialsHeading": "الشهادات",
+    "blogHeading": "المدونة والمقالات",
+    "experienceHeading": "الخبرة",
+    "timelineTitle": "الخط الزمني المهني"
+  },
+  "chat": {
+    "title": "تحدث مع نسختي الرقمية",
+    "subtitle": "اسألني عن أي شيء يتعلق بخبرتي، مشاريعي، أو توافقي.",
+    "welcomeMessage": "مرحباً، أنا النسخة الرقمية المهنية لكامل. اسألني عن أي شيء يتعلق بخبرتي، مشاريعي، أو توافقي.",
+    "placeholder": "اكتب رسالتك...",
+    "backToPortfolio": "العودة إلى الملف الشخصي",
+    "typing": "يكتب...",
+    "connected": "متصل بالخادم",
+    "connectionIssue": "مشكلة في الاتصال",
+    "notReachable": "الخادم غير متاح"
+  }
+}
